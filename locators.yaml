@@ -1,0 +1,46 @@
+# User should follow the same naming conventions while providing elementType, locator type, option type etc.,
+# that are mentioned in the Constants.java file
+# ElementType: {locator: {type: id, value: searchDropdownBox}, selectType: value}
+# Locator types - [cssSelector, id, class, xpath, etc.]
+# selection option types - [visibleText, index, value]
+#
+---
+commands:
+  -
+    elementType: select
+    select:
+      locator:
+        type: cssSelector
+        value: "#searchDropdownBox"
+      option:
+        type: visibleText
+        value: Books
+  -
+    elementType: input
+    input:
+      locator:
+        type: id
+        value: twotabsearchtextbox
+      text: Becoming
+  -
+    elementType: button
+    button:
+      locator:
+        type: cssSelector
+        value: ".nav-search-submit > input:nth-child(2)"
+  -
+    elementType: button
+    button:
+      locator:
+        type: cssSelector
+        value: "#search > div.sg-row > div.sg-col-20-of-24.sg-col-28-of-32.sg-col-16-of-20.sg-col.s-right-column.sg-col-32-of-36.sg-col-8-of-12.sg-col-12-of-16.sg-col-24-of-28 > div > span:nth-child(4) > div.s-result-list.s-search-results.sg-row > div:nth-child(1) > div > div > div > div:nth-child(2) > div.sg-col-4-of-24.sg-col-4-of-12.sg-col-4-of-36.sg-col-4-of-28.sg-col-4-of-16.sg-col.sg-col-4-of-20.sg-col-4-of-32 > div > div > span > a > div"
+  -
+    elementType: waitPageLoad
+    waitPageLoad: 10
+
+  -
+    elementType: pageSource
+    pageName: bookDescription
+driver: chrome
+url: "https://www.amazon.com"
+
